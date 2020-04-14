@@ -1,3 +1,5 @@
-# This script is crawler of  IBOvespa .
+#crawler-python
+This script is a crawler of IBOvespa and Nasdaq.
 
-# Use SQLAlchemy as ORM to administrate to database SQLite
+Use SQLAlchemy as an ORM to manage the SQLite database
+
