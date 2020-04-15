@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-
+from settings import DATABASE_PATH
 
 Base = declarative_base()
 
@@ -13,7 +13,7 @@ class SQLiteConn(object):
         Performs database connection.
         Create a sqlAlchemy engine instance
         """
-        self.engine = create_engine(r'sqlite:///crawler.db', echo=True)
+        self.engine = create_engine(f'sqlite:///{DATABASE_PATH}', echo=True)
 
     def create_session(self):
         """

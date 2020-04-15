@@ -1,6 +1,7 @@
-'''model IBovespa'''
-from Model.SQLiteConn import Base
-from sqlalchemy import Column, Integer, Float, String
+"""model IBovespa"""
+from ConnectionSqlite.SQLiteConn import Base
+from datetime import datetime
+from sqlalchemy import Column, Integer, Float, String, DateTime
 
 
 class IBovespa(Base):
@@ -14,5 +15,6 @@ class IBovespa(Base):
     chg = Column(Float)
     chg_perc = Column(Float)
     vol = Column(String)
-    time = Column(String)
+    time = Column(Integer)
+    created_date = Column(DateTime)
 
