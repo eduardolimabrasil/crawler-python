@@ -1,6 +1,6 @@
-*/1 * * * * root (cd /crawler && /usr/local/bin/python3.7 Main.py ibovespa) >> /var/log/cron.log 2>&1
-*/1 * * * * root (cd /crawler && /usr/local/bin/python3.7 Main.py nasdaq) >> /var/log/cron.log 2>&1
-*/1 * * * * root (cd /crawler && /usr/local/bin/python3.7 Main.py usd_brl) >> /var/log/cron.log 2>&1
-*/1 * * * * root (cd /crawler && /usr/local/bin/python3.7 Main.py) >> /var/log/cron.log 2>&1
-*/1 * * * * root echo "Executando..." >> /var/log/cron.log 2>&1
+*/2 * * * * root (cd /crawler && /usr/local/bin/python3.7 Main.py ibovespa) >> /var/log/cron.log 2>&1
+*/2 * * * * root (cd /crawler && /usr/local/bin/python3.7 Main.py nasdaq) >> /var/log/cron.log 2>&1
+*/2 * * * * root (cd /crawler && /usr/local/bin/python3.7 Main.py usd_brl) >> /var/log/cron.log 2>&1
+*/2 * * * * root (cd /crawler && /usr/local/bin/python3.7 Main.py) >> /var/log/cron.log 2>&1
+*/2 * * * * root echo "Executando..." >> /var/log/cron.log 2>&1
 # Don't remove the empty line at the end of this file. It is required to run the cron job
