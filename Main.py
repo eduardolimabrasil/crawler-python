@@ -1,10 +1,13 @@
 import sys
+
 from ConnectionSqlite.SQLiteConn import SQLiteConn
 from Model.IBovespa import IBovespa
 from Model.Nasdaq import Nasdaq
 from Model.UsdBrl import UsdBrl
+from Model.NasdaqBrl import NasdaqBrl
 from Helper.ProcessDataHelper import ProcessDataHelper
 from Helper.ProcessDataCurrentHelper import ProcessDataCurrentHelper
+from Helper.ProcessDataNasdaqBrlHelper import ProcessDataNasdaqBrlHelper
 
 from settings import *
 
@@ -42,19 +45,29 @@ def main_usd_brl(session):
     usdbrl_helper.process()
 
 
+def main_nasdaq_brl_file(session):
+    nbrl_helper = ProcessDataNasdaqBrlHelper(
+        session=session,
+        model=NasdaqBrl
+    )
+    nbrl_helper.process()
+
+
 if __name__ == '__main__':
+    conn = SQLiteConn()
+    conn.create_tables()
+    session = conn.create_session()
     if len(sys.argv) > 1:
         _, option = sys.argv
-        conn = SQLiteConn()
-        conn.create_tables()
         options = {
             "ibovespa": main_ibovespa,
             "nasdaq": main_nasdaq,
             "usd_brl": main_usd_brl,
         }
-        session = conn.create_session()
         if options.get(option):
             options.get(option)(session=session)
-        else:
-            print('Invalid option!')
-        session.commit()
+
+    else:
+        main_nasdaq_brl_file(session)  # print('Invalid option!')
+
+    session.commit()

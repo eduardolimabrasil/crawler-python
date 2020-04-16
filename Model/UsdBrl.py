@@ -1,6 +1,7 @@
 """model UsdBrl"""
 from ConnectionSqlite.SQLiteConn import Base
 from sqlalchemy import Column, Integer, Float, String, DateTime
+from sqlalchemy.orm import relationship
 
 
 class UsdBrl(Base):
@@ -11,3 +12,5 @@ class UsdBrl(Base):
     value = Column(Float)
     perc = Column(Float)
     timestamp = Column(DateTime)
+
+    # parents = relationship("Nasdaq_Brl")

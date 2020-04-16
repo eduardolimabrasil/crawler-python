@@ -19,8 +19,8 @@ class ProcessDataHelper(object):
         self.__insert()
 
     def __collect_data(self):
-        soup_ibovespa = request_soup(url=self.__url)
-        return soup_ibovespa.find('table', id='cross_rate_markets_stocks_1')       
+        soup = request_soup(url=self.__url)
+        return soup.find('table', id='cross_rate_markets_stocks_1')
     
     @staticmethod
     def __navigate_rows(soup):
