@@ -1,4 +1,4 @@
-#crawler-python
+# crawler-python
 
 This is a crawler of IBovespa, Nasdaq and the current dollar value in relation to the real.
 
@@ -10,7 +10,7 @@ This application was developed with these tools:
 * Beautifulsoup4
 * Pandas
 
-##How to use
+## How to use
 
 The application runs on Linux Docker or in your local machine.
 
@@ -41,7 +41,7 @@ To execute the application with docker, use this commands:
  
 In the first run, the database file for SQLite called `crawler.db` will be created.
 
-##Settings
+## Settings
 
 There is a settings file (`settings.py`) with all the project's configuration.
 
