@@ -24,7 +24,7 @@ class ProcessDataNasdaqBrlHelper(object):
         df['low_rs'] = df['low_usd'] * usdbrl.value
         df['last_rs'] = df['last_usd'] * usdbrl.value
         data = int(usdbrl.timestamp.timestamp())
-        df.to_csv(f'/data/{data}.csv', columns=['name', 'last_rs', 'high_rs', 'low_rs', 'last_usd', 'high_usd', 'low_usd', 'chg', 'chg_perc', 'vol', 'time'])
+        df.to_csv(f'data/{data}.csv', columns=['name', 'last_rs', 'high_rs', 'low_rs', 'last_usd', 'high_usd', 'low_usd', 'chg', 'chg_perc', 'vol', 'time'])
 
     def __insert(self, nasdaq_id, usdbrl_id):
         nbrl = NasdaqBrl(nasdaq_id=nasdaq_id,
