@@ -23,7 +23,7 @@ Has 4 arguments to run, use these commands for it:
 1. `python app.py --crawler ibovespa` - Fist Crawler
 1. `python app.py --crawler nasdaq` - Second Crawler
 1. `python app.py --crawler usd_brl` - Third Crawler
-1. `python app.py` - Without argument, needs the 2 and 3 executed first. 
+1. `python app.py --crawler file` - Without argument, needs the 2 and 3 executed first. 
     This execution make a output file inside `data` folder with Nasdaq data converted to Real (BRL)
  
 ### Docker

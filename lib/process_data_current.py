@@ -26,7 +26,7 @@ class ProcessDataCurrent(ProcessData):
 
     def __collect_data(self) -> Tuple:
         """collect_data."""
-        soup = request_soup(url=self.__url)
+        soup = request_soup(url=self._ProcessData__url)
         quotes_box_top = soup.find('div', 'quotesBoxTop')
         currency = 'USD'
         value = float(quotes_box_top.contents[1].contents[0])

@@ -73,12 +73,6 @@ def main():
         nargs=1,
         help='Target Crawler Name(ibovespa, nasdaq and usd_brl)'
     )
-    parser.add_argument(
-        '--crawler_file',
-        type=str,
-        nargs=0,
-        help='Get file'
-    )
     args = parser.parse_args()
     if args.crawler:
         conn = SQLiteConn()
@@ -87,13 +81,11 @@ def main():
         options = {
             "ibovespa": main_ibovespa,
             "nasdaq": main_nasdaq,
-            "usd_brl": main_usd_brl
+            "usd_brl": main_usd_brl,
+            'file': main_nasdaq_brl_file
         }
         if args.crawler[0] in options:
             options.get(args.crawler[0])(session=session)
-
-        else:
-            main_nasdaq_brl_file(session)  # print('Invalid option!')
 
         session.commit()
     else:
